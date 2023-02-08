@@ -231,7 +231,7 @@ class WhenLearner(object):
         sublearner = self.sub_learners[key]
 
         if(isinstance(sublearner, Pipeline)):
-            feature_names = sublearner.named_steps["dict vect"].get_feature_names()
+            feature_names = sublearner.named_steps["dict vect"].get_feature_names_out()
 
         return sublearner.skill_info(state)
 
@@ -317,7 +317,7 @@ class CustomPipeline(Pipeline):
 
     def skill_info(self, X):
         X = [X] if not isinstance(X, list) else X
-        feature_names = self.named_steps["dict vect"].get_feature_names()
+        feature_names = self.named_steps["dict vect"].get_feature_names_out()
         classifier = self.steps[-1][-1]
 
         ft = Flattener()
@@ -340,7 +340,7 @@ class CustomPipeline(Pipeline):
         Xt = X
         for name, transform in self.steps[:-1]:
             if transform is not None:
-                # print("HEY",transform.get_feature_names())
+                # print("HEY",transform.get_feature_names_out())
                 Xt = transform.transform(Xt)
                 # print("BAE_"+name,Xt)
 

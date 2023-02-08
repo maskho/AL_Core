@@ -25,7 +25,7 @@ SECRET_KEY = 'g1s7^%a)(u(sy2l_flc@#5tm(w-@qu9)v^s(1dwyz9(-si_ca@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-108-137-51-188.ap-southeast-3.compute.amazonaws.com','madras.id','al.madras.id','lab.madras.id']
+ALLOWED_HOSTS = ['ec2-108-137-51-188.ap-southeast-3.compute.amazonaws.com','madras.id','al.madras.id','lab.madras.id', '127.0.0.1', 'localhost']
 
 
 # Application definition
